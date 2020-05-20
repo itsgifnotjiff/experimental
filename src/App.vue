@@ -1,21 +1,26 @@
 <template>
   <v-app>
+    <TopBar/>
+
     <v-content>
-      <AppBar/>
+      <router-view/>
     </v-content>
+
+    <BottomNavigation/>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld';
-import AppBar from './views/AppBar'
+import TopBar from './views/TopBar'
+import BottomNavigation from './views/BottomNavigation'
+
 
 export default {
   name: 'App',
 
   components: {
-    AppBar,
-    HelloWorld,
+    TopBar,
+    BottomNavigation
   },
 
   data: () => ({

@@ -19,9 +19,26 @@ Vue.use(VueRouter)
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
   },
   {
-    path: '/forecasts',
+    path: '/forecasts/',
     name: 'Forecasts',
-    component: () => import(/* webpackChunkName: "about" */ '../views/Forecasts.vue')
+    component: () => import('../views/Forecasts.vue'),
+    children: [
+      {
+        path: 'a1',
+        name: 'A1',
+        component: () => import('../views/A1.vue')
+      },
+      {
+        path: 'a2',
+        name: 'A2',
+        component: () => import('../views/A2.vue')
+      },
+      {
+        path: 'a3',
+        name: 'A3',
+        component: () => import('../views/A3.vue')
+      }
+    ]
   }
 ]
 
